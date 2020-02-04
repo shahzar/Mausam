@@ -11,25 +11,39 @@ import javax.inject.Inject
 class HomeViewModel @Inject constructor (val dataManager: DataManager) : BaseViewModel(){
 
     private val _weatherData = MutableLiveData<WeatherModel>()
+    private val _showProgress = MutableLiveData<Boolean>()
 
-    val sampleData: LiveData<WeatherModel>
+    val weatherData: LiveData<WeatherModel>
         get() = _weatherData
+
+    val showProgress: LiveData<Boolean>
+        get() = _showProgress
+
 
     fun inject(appComponent: AppComponent) {
         appComponent.inject(this)
     }
 
-    fun getWeatherData() {
+    fun getWeatherData(cities: List<String>) {
+
+        cities.forEach {
+            getWeatherData(it)
+        }
+
+    }
+
+    private fun getWeatherData(city: String) {
+        _showProgress.value = true
 
         ioLaunch(
             block = {
-                dataManager.getWeather("London")
+                dataManager.getWeather(city)
             },
             onSuccess = {
+                _showProgress.value = false
                 _weatherData.value = it
             }
         )
-
     }
 
 }

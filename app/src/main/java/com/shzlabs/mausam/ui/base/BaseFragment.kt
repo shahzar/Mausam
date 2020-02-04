@@ -15,4 +15,9 @@ open class BaseFragment: Fragment() {
         Snackbar.make(view, msg, Snackbar.LENGTH_LONG).show()
     }
 
+    fun showInfo(view: View, msg: String) {
+        Snackbar.make(view, msg, Snackbar.LENGTH_LONG).show()
+    }
+
+
 }
