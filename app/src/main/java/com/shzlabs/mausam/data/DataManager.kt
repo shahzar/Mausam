@@ -7,7 +7,7 @@ import retrofit2.HttpException
 import java.io.IOException
 import javax.inject.Inject
 
-class DataManager @Inject constructor(val remoteDataSrc: ApiService) {
+class DataManager @Inject constructor(private val remoteDataSrc: ApiService) {
 
     private suspend fun <T> safeApiCall(apiCall: suspend () -> T) = withContext(Dispatchers.IO) {
         try {
@@ -23,5 +23,9 @@ class DataManager @Inject constructor(val remoteDataSrc: ApiService) {
 
     suspend fun getWeather(city: String) = safeApiCall {
         remoteDataSrc.getWeather(city)
+    }
+
+    suspend fun getForecast(city: String) = safeApiCall {
+        remoteDataSrc.getForecast(city)
     }
 }

@@ -7,10 +7,11 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.shzlabs.mausam.R
 import com.shzlabs.mausam.data.model.WeatherModel
+import javax.inject.Inject
 
-class WeatherListAdapter : RecyclerView.Adapter<WeatherListAdapter.CustomViewHolder>() {
+class WeatherListAdapter @Inject constructor(): RecyclerView.Adapter<WeatherListAdapter.CustomViewHolder>() {
 
-    var items: MutableList<WeatherModel> = mutableListOf()
+    private var items: MutableList<WeatherModel> = mutableListOf()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CustomViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_weather, parent, false)
@@ -32,7 +33,6 @@ class WeatherListAdapter : RecyclerView.Adapter<WeatherListAdapter.CustomViewHol
 
     override fun onBindViewHolder(holder: CustomViewHolder, position: Int) {
         // todo add checks
-        // todo Kelvin to Celcius
         // todo Description UI
         holder.temperatureTv.text = items[position].main.tempMin.toString() + "/" + items[position].main.tempMax.toString()
         holder.countryTv.text = items[position].name

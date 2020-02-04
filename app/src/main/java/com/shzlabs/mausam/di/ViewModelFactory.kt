@@ -2,6 +2,7 @@ package com.shzlabs.mausam.di
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import com.shzlabs.mausam.ui.forecast.ForecastViewModel
 import com.shzlabs.mausam.ui.search.SearchViewModel
 import dagger.Binds
 import dagger.MapKey
@@ -32,7 +33,13 @@ internal abstract class ViewModelBuilder {
     @Binds
     @IntoMap
     @ViewModelKey(SearchViewModel::class)
-    internal abstract fun homeViewModel(homeViewModel: SearchViewModel) : ViewModel
+    internal abstract fun searchViewModel(searchViewModel: SearchViewModel) : ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(ForecastViewModel::class)
+    internal abstract fun forecastViewModel(forecastViewModel: ForecastViewModel) : ViewModel
+
 }
 
 @Target(

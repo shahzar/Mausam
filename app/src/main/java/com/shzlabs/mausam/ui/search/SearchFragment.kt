@@ -17,12 +17,15 @@ import javax.inject.Inject
 
 class SearchFragment : BaseFragment() {
 
-    private var weatherListAdapter = WeatherListAdapter()
-    lateinit var rootView: View
-
     companion object {
+
         fun newInstance() = SearchFragment()
     }
+
+    lateinit var rootView: View
+
+    @Inject
+    lateinit var weatherListAdapter: WeatherListAdapter
 
     @Inject
     lateinit var viewModelFactory: ViewModelFactory
