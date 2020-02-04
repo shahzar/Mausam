@@ -1,4 +1,4 @@
-package com.shzlabs.mausam.ui.home
+package com.shzlabs.mausam.ui.search
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

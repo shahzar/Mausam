@@ -2,7 +2,7 @@ package com.shzlabs.mausam.di
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.shzlabs.mausam.ui.home.HomeViewModel
+import com.shzlabs.mausam.ui.search.HomeViewModel
 import dagger.Binds
 import dagger.MapKey
 import dagger.Module

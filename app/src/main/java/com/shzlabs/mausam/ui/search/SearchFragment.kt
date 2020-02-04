@@ -1,4 +1,4 @@
-package com.shzlabs.mausam.ui.home
+package com.shzlabs.mausam.ui.search
 
 import android.content.Context
 import android.os.Bundle
@@ -15,13 +15,13 @@ import kotlinx.android.synthetic.main.home_fragment.*
 import kotlinx.android.synthetic.main.home_fragment.view.*
 import javax.inject.Inject
 
-class HomeFragment : BaseFragment() {
+class SearchFragment : BaseFragment() {
 
     private var weatherListAdapter = WeatherListAdapter()
     lateinit var rootView: View
 
     companion object {
-        fun newInstance() = HomeFragment()
+        fun newInstance() = SearchFragment()
     }
 
     @Inject

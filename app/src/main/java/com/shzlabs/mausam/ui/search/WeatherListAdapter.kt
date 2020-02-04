@@ -1,4 +1,4 @@
-package com.shzlabs.mausam.ui.home
+package com.shzlabs.mausam.ui.search
 
 import android.view.LayoutInflater
 import android.view.View
@@ -32,6 +32,8 @@ class WeatherListAdapter : RecyclerView.Adapter<WeatherListAdapter.CustomViewHol
 
     override fun onBindViewHolder(holder: CustomViewHolder, position: Int) {
         // todo add checks
+        // todo Kelvin to Celcius
+        // todo Description UI
         holder.temperatureTv.text = items[position].main.tempMin.toString() + "/" + items[position].main.tempMax.toString()
         holder.countryTv.text = items[position].name
         holder.descriptionTv.text = items[position].weather[0].description

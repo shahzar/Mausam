@@ -2,7 +2,7 @@ package com.shzlabs.mausam
 
 import android.os.Bundle
 import com.shzlabs.mausam.ui.base.BaseActivity
-import com.shzlabs.mausam.ui.home.HomeFragment
+import com.shzlabs.mausam.ui.search.SearchFragment
 
 class MainActivity : BaseActivity() {
 
@@ -10,7 +10,7 @@ class MainActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        NavMgr().pushFragment(this, HomeFragment.newInstance())
+        NavMgr().pushFragment(this, SearchFragment.newInstance())
 
         getDiComponent().inject(this)
     }
