@@ -2,7 +2,7 @@ package com.shzlabs.mausam.di
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.shzlabs.mausam.ui.search.HomeViewModel
+import com.shzlabs.mausam.ui.search.SearchViewModel
 import dagger.Binds
 import dagger.MapKey
 import dagger.Module
@@ -31,8 +31,8 @@ internal abstract class ViewModelBuilder {
 
     @Binds
     @IntoMap
-    @ViewModelKey(HomeViewModel::class)
-    internal abstract fun homeViewModel(homeViewModel: HomeViewModel) : ViewModel
+    @ViewModelKey(SearchViewModel::class)
+    internal abstract fun homeViewModel(homeViewModel: SearchViewModel) : ViewModel
 }
 
 @Target(

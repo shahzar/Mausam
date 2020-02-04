@@ -8,7 +8,7 @@ import com.shzlabs.mausam.di.components.AppComponent
 import com.shzlabs.mausam.ui.base.BaseViewModel
 import javax.inject.Inject
 
-class HomeViewModel @Inject constructor (val dataManager: DataManager) : BaseViewModel(){
+class SearchViewModel @Inject constructor (val dataManager: DataManager) : BaseViewModel(){
 
     private val _weatherData = MutableLiveData<WeatherModel>()
     private val _showProgress = MutableLiveData<Boolean>()
