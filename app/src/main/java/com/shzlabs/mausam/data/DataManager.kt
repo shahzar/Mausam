@@ -25,7 +25,7 @@ class DataManager @Inject constructor(private val remoteDataSrc: ApiService) {
         remoteDataSrc.getWeather(city)
     }
 
-    suspend fun getForecast(city: String) = safeApiCall {
-        remoteDataSrc.getForecast(city)
+    suspend fun getForecast(lat: Int, lon: Int) = safeApiCall {
+        remoteDataSrc.getForecast(lat, lon)
     }
 }

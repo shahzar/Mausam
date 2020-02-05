@@ -1,6 +1,7 @@
 package com.shzlabs.mausam.helper
 
 import com.shzlabs.mausam.data.model.ForecastItem
+import com.shzlabs.mausam.helper.DateUtil.getDayString
 import java.util.*
 
 object DataHelper {
@@ -34,19 +35,6 @@ object DataHelper {
 
         return modList
 
-    }
-
-    fun getDayString(day:Int): String{
-        return when (day) {
-            1 -> "Sunday"
-            2 -> "Monday"
-            3 -> "Tuesday"
-            4 -> "Wednesday"
-            5 -> "Thursday"
-            6 -> "Friday"
-            7 -> "Saturday"
-            else -> ""
-        }
     }
 
     fun capitalizeText(str: String): String {

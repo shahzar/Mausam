@@ -7,4 +7,7 @@
     <color name="text_label_day">#3F51B5</color>
     <color name="font_faded_1">#AAAAAA</color>
     <color name="font_dark">#555555</color>
+
+    <color name="snack_bar_error">#F44336</color>
+
 </resources>

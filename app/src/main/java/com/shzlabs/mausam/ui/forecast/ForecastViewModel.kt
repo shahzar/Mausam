@@ -14,11 +14,11 @@ class ForecastViewModel @Inject constructor(private val dataManager: DataManager
     val forecastData: LiveData<ForecastModel>
         get() = _forecastData
 
-    fun getForecastData() {
+    fun getForecastData(lat: Int, lon: Int) {
 
         ioLaunch(
             block = {
-                dataManager.getForecast("Dubai")
+                dataManager.getForecast(lat, lon)
             },
             onSuccess = {
                 _forecastData.value = it

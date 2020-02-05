@@ -13,4 +13,8 @@ interface ApiService {
     @GET("forecast?units=metric&appid=73bdfae75f5fb972121c86bbdd7588eb")
     suspend fun getForecast(@Query("q") city: String): ForecastModel
 
+    @GET("forecast?units=metric&appid=73bdfae75f5fb972121c86bbdd7588eb")
+    suspend fun getForecast(@Query("lat") lat: Int, @Query("lon") lon: Int): ForecastModel
+
+
 }
