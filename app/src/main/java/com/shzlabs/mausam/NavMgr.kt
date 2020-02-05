@@ -3,7 +3,7 @@ package com.shzlabs.mausam
 import com.shzlabs.mausam.ui.base.BaseActivity
 import com.shzlabs.mausam.ui.base.BaseFragment
 
-class NavMgr() {
+object NavMgr {
 
     fun pushFragment(baseActivity: BaseActivity, baseFragment: BaseFragment) {
         baseActivity

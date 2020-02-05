@@ -12,6 +12,10 @@ open class BaseFragment: Fragment() {
         return (activity as BaseActivity).getDiComponent()
     }
 
+    fun setTitle(title: String) {
+        (activity as BaseActivity).supportActionBar?.title = title
+    }
+
     fun showError(view: View, msg: String) {
         val snackbar = Snackbar.make(view, msg, Snackbar.LENGTH_LONG)
         snackbar.view.setBackgroundColor(resources.getColor(R.color.snack_bar_error))

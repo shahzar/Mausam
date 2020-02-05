@@ -39,6 +39,8 @@ class SearchFragment : BaseFragment() {
 
         rootView = inflater.inflate(R.layout.home_fragment, container, false)
 
+        setTitle(getString(R.string.page_title_search))
+
         initView()
 
         return rootView

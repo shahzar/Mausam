@@ -44,6 +44,8 @@ class ForecastFragment : BaseFragment() {
 
         rootView = inflater.inflate(R.layout.fragment_forecast, container, false)
 
+        setTitle(getString(R.string.page_title_forecast))
+
         initView()
 
         return rootView
