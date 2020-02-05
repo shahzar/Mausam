@@ -10,6 +10,7 @@
     <string name="err_perm_required">Permission required to access location</string>
 
     <!--  Page Titles  -->
+    <string name="page_title_home">Home</string>
     <string name="page_title_forecast">Forecast</string>
     <string name="page_title_search">Search by city</string>
 </resources>

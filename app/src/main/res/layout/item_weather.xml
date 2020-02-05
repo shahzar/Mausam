@@ -10,7 +10,7 @@
         android:id="@+id/country_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="@dimen/font_large"
+        android:textColor="@color/colorPrimary"
         app:layout_constraintStart_toStartOf="@id/guideline_vertical"
         app:layout_constraintTop_toTopOf="@id/guideline_horizontal"
         tools:text="Country" />
@@ -19,8 +19,9 @@
         android:id="@+id/temperature_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="@id/guideline_vertical"
-        app:layout_constraintTop_toBottomOf="@id/country_tv"
+        app:layout_constraintEnd_toEndOf="@id/guideline_vertical_end"
+        app:layout_constraintTop_toTopOf="@id/description_tv"
+        app:layout_constraintBottom_toBottomOf="@id/description_tv"
         tools:text="Temperature" />
 
 
@@ -28,8 +29,9 @@
         android:id="@+id/description_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="@color/font_dark"
         app:layout_constraintStart_toStartOf="@id/guideline_vertical"
-        app:layout_constraintTop_toBottomOf="@id/temperature_tv"
+        app:layout_constraintTop_toBottomOf="@id/country_tv"
         tools:text="Description" />
 
     <TextView
@@ -53,6 +55,13 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_begin="20dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_vertical_end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="20dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

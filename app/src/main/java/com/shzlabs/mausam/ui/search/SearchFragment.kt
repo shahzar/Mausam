@@ -11,8 +11,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.shzlabs.mausam.di.ViewModelFactory
 import com.shzlabs.mausam.ui.base.BaseFragment
 import com.shzlabs.mausam.R
-import kotlinx.android.synthetic.main.home_fragment.*
-import kotlinx.android.synthetic.main.home_fragment.view.*
+import kotlinx.android.synthetic.main.search_fragment.*
+import kotlinx.android.synthetic.main.search_fragment.view.*
 import javax.inject.Inject
 
 class SearchFragment : BaseFragment() {
@@ -37,7 +37,7 @@ class SearchFragment : BaseFragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        rootView = inflater.inflate(R.layout.home_fragment, container, false)
+        rootView = inflater.inflate(R.layout.search_fragment, container, false)
 
         setTitle(getString(R.string.page_title_search))
 

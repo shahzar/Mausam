@@ -32,6 +32,8 @@ class LandingFragment : BaseFragment() {
     ): View? {
         // Inflate the layout for this fragment
 
+        setTitle(getString(R.string.page_title_home))
+
         rootView = inflater.inflate(R.layout.fragment_landing, container, false)
 
         initView()

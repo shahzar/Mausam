@@ -32,9 +32,13 @@ class WeatherListAdapter @Inject constructor(): RecyclerView.Adapter<WeatherList
     }
 
     override fun onBindViewHolder(holder: CustomViewHolder, position: Int) {
+
+        val minTemp = "${items[position].main.tempMin.toInt()}°"
+        val maxTemp = "${items[position].main.tempMax.toInt()}°"
+
         // todo add checks
         // todo Description UI
-        holder.temperatureTv.text = items[position].main.tempMin.toString() + "/" + items[position].main.tempMax.toString()
+        holder.temperatureTv.text = "$minTemp/${maxTemp}"
         holder.countryTv.text = items[position].name
         holder.descriptionTv.text = items[position].weather[0].description
         holder.windSpeedTv.text = items[position].wind.speed.toString()
