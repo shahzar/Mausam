@@ -34,7 +34,9 @@ class LandingFragment : BaseFragment() {
 
         setTitle(getString(R.string.page_title_home))
 
-        rootView = inflater.inflate(R.layout.fragment_landing, container, false)
+        if (!::rootView.isInitialized) {
+            rootView = inflater.inflate(R.layout.fragment_landing, container, false)
+        }
 
         initView()
 

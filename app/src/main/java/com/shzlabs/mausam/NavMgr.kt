@@ -5,6 +5,20 @@ import com.shzlabs.mausam.ui.base.BaseFragment
 
 object NavMgr {
 
+    fun pushInitFragment(baseActivity: BaseActivity, baseFragment: BaseFragment) {
+
+        if (baseActivity.supportFragmentManager.backStackEntryCount != 0) {
+            return
+        }
+
+        baseActivity
+            .supportFragmentManager
+            .beginTransaction()
+            .addToBackStack("")
+            .replace(R.id.content, baseFragment)
+            .commit()
+    }
+
     fun pushFragment(baseActivity: BaseActivity, baseFragment: BaseFragment) {
         baseActivity
             .supportFragmentManager

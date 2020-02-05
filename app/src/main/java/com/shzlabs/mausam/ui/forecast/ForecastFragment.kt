@@ -44,7 +44,9 @@ class ForecastFragment : BaseFragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        rootView = inflater.inflate(R.layout.fragment_forecast, container, false)
+        if (!::rootView.isInitialized) {
+            rootView = inflater.inflate(R.layout.fragment_forecast, container, false)
+        }
 
         setTitle(getString(R.string.page_title_forecast))
 

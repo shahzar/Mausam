@@ -12,7 +12,7 @@ class MainActivity : BaseActivity() {
         setContentView(R.layout.activity_main)
 
 
-        NavMgr.pushFragment(this, LandingFragment.newInstance())
+        NavMgr.pushInitFragment(this, LandingFragment.newInstance())
 
         getDiComponent().inject(this)
     }

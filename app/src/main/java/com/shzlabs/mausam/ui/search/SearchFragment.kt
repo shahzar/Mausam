@@ -37,7 +37,9 @@ class SearchFragment : BaseFragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        rootView = inflater.inflate(R.layout.search_fragment, container, false)
+        if (!::rootView.isInitialized) {
+            rootView = inflater.inflate(R.layout.search_fragment, container, false)
+        }
 
         setTitle(getString(R.string.page_title_search))
 
@@ -80,14 +82,10 @@ class SearchFragment : BaseFragment() {
         viewModel.weatherData.observe(viewLifecycleOwner, Observer { weatherListAdapter.addItem(it) })
 
         viewModel.showProgress.observe(viewLifecycleOwner, Observer {
-            if (it) {
-                progress_bar.visibility = View.VISIBLE
-                weather_list.visibility = View.GONE
-                return@Observer
-            }
 
-            progress_bar.visibility = View.GONE
-            weather_list.visibility = View.VISIBLE
+            progress_bar.visibility = if (it) View.VISIBLE else View.GONE
+            weather_list.visibility = if (it) View.GONE else View.VISIBLE
+
         })
 
         viewModel.onError.observe(viewLifecycleOwner, Observer { showError(rootView, it) })
