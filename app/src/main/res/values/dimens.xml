@@ -3,6 +3,8 @@
     <dimen name="font_large">21sp</dimen>
     <dimen name="background_search_corner_radius">10dp</dimen>
 
+    <dimen name="margin_small">5dp</dimen>
     <dimen name="margin">10dp</dimen>
+    <dimen name="margin_large">20dp</dimen>
 
 </resources>

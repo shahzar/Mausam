@@ -15,4 +15,5 @@
     <string name="page_title_search">Search by city</string>
     <string name="label_search">Search</string>
     <string name="label_forecast">Forecast</string>
+    <string name="label_search">Search</string>
 </resources>
