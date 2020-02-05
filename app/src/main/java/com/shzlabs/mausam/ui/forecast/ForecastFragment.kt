@@ -14,6 +14,7 @@ import androidx.core.app.ActivityCompat
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.shzlabs.mausam.NavMgr
 import com.shzlabs.mausam.R
 import com.shzlabs.mausam.di.ViewModelFactory
 import com.shzlabs.mausam.helper.PermissionUtil
@@ -61,11 +62,18 @@ class ForecastFragment : BaseFragment() {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProviders.of(this, viewModelFactory).get(ForecastViewModel::class.java)
 
-        viewModel.forecastData.observe(viewLifecycleOwner, Observer { forecastListAdapter.setItems(it.list) })
+        viewModel.forecastData.observe(viewLifecycleOwner, Observer {
+            setTitle(it.city.name)
+            forecastListAdapter.setItems(it.list)
+        })
+
+        viewModel.showProgress.observe(viewLifecycleOwner, Observer {
+            rootView.forecast_list.visibility = if (it) View.GONE else View.VISIBLE
+            rootView.progress_bar.visibility = if (it) View.VISIBLE else View.GONE
+        })
 
         viewModel.onError.observe(viewLifecycleOwner, Observer { showError(rootView, it) })
 
-        //viewModel.getForecastData()
         getLocation()
     }
 
@@ -105,6 +113,7 @@ class ForecastFragment : BaseFragment() {
             lon = networkLastKnown.longitude.toInt()
         } else {
             showError(rootView, getString(R.string.warn_gps_off))
+            NavMgr.pop(activity as BaseActivity)
             lat = 0
             lon = 0
             return
@@ -123,6 +132,7 @@ class ForecastFragment : BaseFragment() {
             grantResults.forEach {
                 if (it != PackageManager.PERMISSION_GRANTED) {
                     showError(rootView, getString(R.string.err_perm_required))
+                    NavMgr.pop(activity as BaseActivity)
                     return
                 }
             }

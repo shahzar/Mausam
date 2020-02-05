@@ -54,6 +54,7 @@ class SearchFragment : BaseFragment() {
         rootView.fetch_data_button.setOnClickListener {
 
             val cities = search_edit_text.text
+                .trim()
                 .split(',')
                 .filter { it.isNotEmpty() }
 
