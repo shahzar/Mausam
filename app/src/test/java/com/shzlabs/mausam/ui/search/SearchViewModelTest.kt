@@ -1,11 +1,10 @@
-package com.shzlabs.mausam.ui.forecast
+package com.shzlabs.mausam.ui.search
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.lifecycle.Observer
 import com.shzlabs.mausam.data.DataManager
-import com.shzlabs.mausam.data.model.ForecastModel
+import com.shzlabs.mausam.data.model.WeatherModel
 import com.shzlabs.mausam.data.repository.ApiService
-import kotlinx.coroutines.test.runBlockingTest
 import org.junit.Assert.*
 import org.junit.Before
 import org.junit.Rule
@@ -16,7 +15,7 @@ import org.mockito.Mock
 import org.mockito.MockitoAnnotations
 
 @RunWith(JUnit4::class)
-class ForecastViewModelTest {
+class SearchViewModelTest {
 
     @get:Rule
     val rule = InstantTaskExecutorRule()
@@ -25,23 +24,25 @@ class ForecastViewModelTest {
     lateinit var apiService: ApiService
 
     @Mock
-    lateinit var observer: Observer<ForecastModel>
+    lateinit var observer: Observer<WeatherModel>
 
     lateinit var dataManager: DataManager
 
-    lateinit var forecastViewModel: ForecastViewModel
+    lateinit var searchViewModel: SearchViewModel
 
     @Before
     fun setUp() {
         MockitoAnnotations.initMocks(this)
         dataManager = DataManager(apiService)
-        forecastViewModel = ForecastViewModel(dataManager)
-        forecastViewModel.forecastData.observeForever(observer)
+        searchViewModel = SearchViewModel(dataManager)
+        searchViewModel.weatherData.observeForever(observer)
     }
 
     @Test
     fun testNull(){
-        assertNotNull(forecastViewModel.forecastData)
-        assertTrue(forecastViewModel.forecastData.hasActiveObservers())
+        assertNotNull(searchViewModel.weatherData)
+        assertTrue(searchViewModel.weatherData.hasActiveObservers())
     }
+
+
 }
