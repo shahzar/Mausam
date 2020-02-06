@@ -8,6 +8,10 @@ A weather application utilizing OpenWeatherMap Api
 - Retrofit/OkHttp
 - Kotlin Coroutines 
 
+### Screenshots
+<img width="300" alt="screenshot1" src="screenshots/sc1.png">
+<img width="300" alt="screenshot2" src="screenshots/sc2.png">
+
 ### How To Run
 Build
 
